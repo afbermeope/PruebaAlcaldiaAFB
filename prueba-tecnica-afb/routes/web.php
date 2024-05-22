@@ -26,5 +26,9 @@ Route::group(['middleware' => 'auth'], function () {
     //Rutas get
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/account-sign-out', [UserController::class, 'getSignOut']);
+    Route::get('/profile', [UserController::class, 'showProfile']);
+
+    //Rutas resource
+    Route::resource('user', UserController::class);
 
 });

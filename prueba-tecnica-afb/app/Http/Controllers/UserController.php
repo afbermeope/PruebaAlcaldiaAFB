@@ -62,7 +62,11 @@ class UserController extends Controller
      */
     public function showProfile()
     {
-
+        return view('user.profile')->with([
+            'user'  => \Auth::user(),
+            'message' => '',
+            'error' => '',
+        ]);
     }
 
     /**
@@ -85,7 +89,31 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-    
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        $user = User::find($id);
+
+        try {
+            
+            if ($password != '' && $password != null) {
+                $user->password = Hash::make($password);
+            }
+            $user->name = $name;
+            $user->email = $email;
+
+            $user->save();
+
+            return view('user.profile')->with([
+                'user'  => $user,
+                'message' => 'Perfil cambiado correctamente',
+                'error' => '',
+            ]);
+            
+        } catch (\Throwable $th) {
+            print($th);
+        }
     }
 
     /**
