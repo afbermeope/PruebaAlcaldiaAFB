@@ -1,3 +1,55 @@
+
+# Prueba técnica Convocatoria Talentos en programación
+
+Este proyecto es presentado como prueba de los conocimientos de un servidor, espero sea de su agrado
+
+## Corriendo el proyecto localmente
+
+Clonar el repositorio
+
+```bash
+  git clone https://github.com/afbermeope/PruebaAlcaldiaAFB.git
+```
+
+Ir al directorio del proyecto
+
+```bash
+  cd .\PruebaAlcaldiaAFB\prueba-tecnica-afb\
+```
+
+Instalar dependencias
+```bash
+  composer install
+```
+
+Iniciar el servidor
+```bash
+  php artisan serve
+```
+
+Correr migraciones (crear primero la base de datos dentro de mysql con el nombre prueba_tecnica_afb )
+
+```bash
+  php artisan migrate
+```
+
+Obtener la appkey
+
+```bash
+  php artisan key:generate
+```
+
+Correr los seeders de usuario (opcional)
+
+```bash
+  php artisan db:seed
+
+```
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
