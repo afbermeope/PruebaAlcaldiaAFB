@@ -105,14 +105,16 @@ class UserController extends Controller
 
             $user->save();
 
-            return view('user.profile')->with([
+            return redirect()->route('profile.index')->with([
                 'user'  => $user,
-                'message' => 'Perfil cambiado correctamente',
-                'error' => '',
+                'success' => 'Perfil actualizado correctamente',
+                'error' => ''
             ]);
-            
         } catch (\Throwable $th) {
-            print($th);
+            return redirect()->route('profile.index')->with([
+                'success' => '',
+                'error' => 'Ocurrió un error al actualizar el perfil',
+            ]);
         }
     }
 

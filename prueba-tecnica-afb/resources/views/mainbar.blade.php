@@ -116,6 +116,22 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="/departamento" class="nav-link">
+                <i class="nav-icon fas fa-user-alt"></i>
+                <p>
+                  Departamentos
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/empleado" class="nav-link">
+                <i class="nav-icon fas fa-user-alt"></i>
+                <p>
+                  Empleados
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="/account-sign-out" class="nav-link">
                 <i class=" fas fa-sign-out-alt"></i>
                 <p>
