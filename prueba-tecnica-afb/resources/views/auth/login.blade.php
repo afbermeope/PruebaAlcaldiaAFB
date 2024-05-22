@@ -59,17 +59,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Recuérdame
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+          </div>
+          <div class="col-8">
+            <a href="/register" class="text-center">No tienes cuenta? Registrate!</a>
           </div>
           <!-- /.col -->
         </div>
@@ -77,11 +72,6 @@
 
       <!-- /.social-auth-links -->
 
-    @if (Route::has('password.request'))
-        <a class="btn btn-link" href="{{ route('password.request') }}">
-            {{ __('¿Olvidaste tu contraseña?') }}
-        </a>
-    @endif
     </div>
     <!-- /.login-card-body -->
   </div>

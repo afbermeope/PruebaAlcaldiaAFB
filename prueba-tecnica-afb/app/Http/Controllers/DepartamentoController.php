@@ -180,7 +180,6 @@ class DepartamentoController extends Controller
         $departamento = Departamento::find($id);
         $otrosDepartamentos = Departamento::where('id', '!=', $id)->get();
         // Verifica si hay empleados asignados a este departamento
-        
         $empleadosAsignados = Empleado::where('departamento_id', $id)->exists();
         return view('departamentos.delete')->with([
             'departamento'  => $departamento,
