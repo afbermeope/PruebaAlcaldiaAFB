@@ -20,6 +20,7 @@ Ir al directorio del proyecto
 ```bash
   cd .\PruebaAlcaldiaAFB\prueba-tecnica-afb\
 ```
+Renombrar el archivo .env.example por .env
 
 Instalar dependencias
 ```bash
