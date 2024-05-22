@@ -11,12 +11,13 @@ use App\Models\Empleado;
 class EmpleadoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra la vista inicial del recurso Empleado.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        //Uso de eloquent para traer la informacion de los empleados y los departamentos
         $empleados = Empleado::all();
         $departamentos = Departamento::all();
 
@@ -27,7 +28,7 @@ class EmpleadoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Permite mostrar la vista de la creacion del recurso, en este caso decidí agregarlo en la vista inicial para mejorar la interacción del usuario.
      *
      * @return \Illuminate\Http\Response
      */
@@ -37,13 +38,14 @@ class EmpleadoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Permite guardar el recurso Empleado en la base de datos.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        //Validar los campos a guardar
         $request->validate([
             'nombre' => 'required|string|max:255',
             'correo' => 'required|unique:empleados|string|max:255',
@@ -55,6 +57,7 @@ class EmpleadoController extends Controller
         $departamentos = Departamento::all();
         
         try {
+            //Uso de eloquent para crear el recurso Departamento
             Empleado::create($request->all());
             return redirect()->route('empleado.index')->with([
                 'empleados'  => $empleados,
@@ -72,7 +75,7 @@ class EmpleadoController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Mostrar un recurso Empleado en especifico, en este caso por la escaces de campos se decide usar una sola vista
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -83,13 +86,14 @@ class EmpleadoController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra la vista para modificar el recurso Empleado
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
+        //Uso de eloquent para encontrar el recurso Empleado especifico, indispensable en la vista de edición
         $empleado = Empleado::find($id);
         $departamentos = Departamento::all();
 
@@ -100,7 +104,7 @@ class EmpleadoController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza el recurso Empleado en la base de datos.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -108,6 +112,7 @@ class EmpleadoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Usando eloquent para encontrar el empleado
         $empleado = Empleado::find($id);
 
         if (!$empleado) {
@@ -155,6 +160,8 @@ class EmpleadoController extends Controller
     ]);
 
     try {
+        //Asignacion de los nuevos valores del recurso
+
         $empleado->nombre = $request->input('nombre');
         $empleado->correo = $request->input('correo');
         $empleado->cedula = $request->input('cedula');
@@ -177,7 +184,7 @@ class EmpleadoController extends Controller
 
 
     /**
-     * Remove the specified resource from storage.
+     * Borra un recurso en especifico.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -186,7 +193,6 @@ class EmpleadoController extends Controller
     {
         try {
             $empleado = Empleado::find($id);
-
             if (!$empleado) {
                 return redirect()->route('empleado.index')->with('error', 'Empleado no encontrado.');
             }
