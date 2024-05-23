@@ -40,7 +40,7 @@
         <div class="container-fluid">
             <!-- Main row -->
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <!-- general form elements -->
                     <div class="card card-secondary">
                         <div class="card-header">
@@ -86,7 +86,7 @@
                         <!-- form end -->
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="card card-secondary">
                         <div class="card-header">
                             <h3 class="card-title">Lista de empleados</h3>
