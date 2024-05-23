@@ -117,7 +117,7 @@
             </li>
             <li class="nav-item">
               <a href="/departamento" class="nav-link">
-                <i class="nav-icon fas fa-user-alt"></i>
+                <i class="nav-icon fas fa-th-large"></i>
                 <p>
                   Departamentos
                 </p>
@@ -125,7 +125,7 @@
             </li>
             <li class="nav-item">
               <a href="/empleado" class="nav-link">
-                <i class="nav-icon fas fa-user-alt"></i>
+                <i class="nav-icon fas fa-id-badge"></i>
                 <p>
                   Empleados
                 </p>
