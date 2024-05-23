@@ -3,6 +3,10 @@
 
 Este proyecto es presentado como prueba de los conocimientos de un servidor, espero sea de su agrado
 
+## Consideraciones iniciales
+Instalar ultima versión de composer
+https://getcomposer.org/download/
+
 ## Corriendo el proyecto localmente
 
 Clonar el repositorio
@@ -17,14 +21,12 @@ Ir al directorio del proyecto
   cd .\PruebaAlcaldiaAFB\prueba-tecnica-afb\
 ```
 
+## Importante
+Renombrar el archivo .env.example por .env
+
 Instalar dependencias
 ```bash
   composer install
-```
-
-Iniciar el servidor
-```bash
-  php artisan serve
 ```
 
 Correr migraciones (crear primero la base de datos dentro de mysql con el nombre prueba_tecnica_afb )
@@ -46,8 +48,10 @@ Correr los seeders de usuario (opcional)
 
 ```
 
-
-
+Iniciar el servidor
+```bash
+  php artisan serve
+```
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
